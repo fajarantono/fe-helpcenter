@@ -1,10 +1,10 @@
 import { ISiteConfig } from "@/types"
 
 export const siteConfig: ISiteConfig = {
-  name: "Pusat Bantuan Klik Indonesia", // shown in the header
+  name: "Pusat Bantuan", // shown in the header
   description:
     "Anda punya pertanyaan tentang KLIK Indonesia?",
-  image: "/images/hero/illustration01.png",
+  image: "/illustration/hero01.svg",
   links: {
     facebook: "https://facebook.com/",
     instagram: "https://www.instagram.com/",
@@ -46,15 +46,15 @@ export const siteConfig: ISiteConfig = {
       2: [{ text: "Klik Indonesia" }],
     },
     subtitle:
-      "Make your own portfolio + Notion-powered blog in minutes with Next.js and Vercel.",
+      "Kami siap membantu Anda menjelajahi fitur-fitur kami dengan mudah. Temukan solusi cepat untuk pertanyaan Anda di sini!",
     callToActions: [
       {
-        label: "Read the blog",
-        href: "/blog",
+        label: "Selengkapnya",
+        href: "#",
       },
       {
-        label: "Explore my projects",
-        href: "/#projects",
+        label: "Explore",
+        href: "#",
       },
     ],
   },

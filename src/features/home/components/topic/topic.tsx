@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import BoxService from './BoxServices';
 import { getAllCategories } from '@/api/public';
+import { TopicList } from './topic-list';
 import { ICategory } from '@/types/category';
-import SkeletonLoading from './LoadingSkeleton';
+import { Skeleton } from './skeleton';
 import ErrorModal from '@/components/modals/errorModal';
 
-const Services = () => {
+export const Topic = () => {
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState<ICategory[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -44,25 +44,22 @@ const Services = () => {
   };
 
   if (loading) {
-    return <SkeletonLoading />;
+    return <Skeleton />;
   }
 
   return (
-    <div className="flex flex-col">
-      <section className="scroll-m-10 bg-white py-20">
-        <div className="container mx-auto flex text-center justify-center">
-          <div className="w-full lg:w-full xl:w-7/12 ml-0 ">
-            <h2 className="font-extrabold tracking-normal text-[35px] md:text-[48px] leading-none mb-2 md:mb-8 text-black">
-              Pilih Topik
-            </h2>
-          </div>
-        </div>
-      </section>
+    <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
+      <div className="max-w-screen-md mx-auto mb-8 text-center lg:mb-12">
+        <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+          Topik
+        </h2>
+        <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Pilih topik berdasarkan masalahmu</p>
+      </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 pb-8 gap-4 w-11/12 container mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 pb-8 gap-4">
         {categories.map((item: ICategory) => {
           return (
-            <BoxService
+            <TopicList
               key={item.categoryId}
               icon={item.categoryIcon}
               label={item.categoryName}
@@ -75,5 +72,3 @@ const Services = () => {
     </div>
   );
 };
-
-export default Services;

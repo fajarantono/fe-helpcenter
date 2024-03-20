@@ -1,18 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.footer {
-    background-image: url("/image/footer.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-color: #F5F5F5;
-}
-
-.bg-img-header {
-    background-image: url("/image/bg-img-detail.png"); /* The image used */
-    height: 1100px; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */   
-}

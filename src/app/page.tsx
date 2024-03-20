@@ -1,18 +1,26 @@
 'use client';
 
-// import HeroBanner from '@/components/hero';
-// import Services from '@/components/category';
-import { AnimatedGradient } from "@/components"
+import { Footer, Header } from '@/components';
 import {
   HeroBanner,
+  Topic,
+  Faq
 } from "@/features/home"
+
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
-      <AnimatedGradient />
-      <HeroBanner />
-      {/* <Services /> */}
-    </main>
+    <>
+      <Header />
+      <section className="bg-white dark:bg-black">
+        <HeroBanner />
+      </section>
+      <section className="bg-gray-50 dark:bg-black">
+        <Topic/>
+      </section>
+      <section className="bg-white dark:bg-black">
+        <Faq/>
+      </section>
+    </>
   );
 }
